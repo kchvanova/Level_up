@@ -13,7 +13,8 @@ public class CalculatorApplication {
         if (operation.equals(String.valueOf('!'))) {
             result = Operations.calculate_factorial(number1);
 
-        } else {
+        }
+        else {
             double number2 = GetUserData.get_number();
 
 

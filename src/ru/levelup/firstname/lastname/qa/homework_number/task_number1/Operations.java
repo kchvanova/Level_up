@@ -2,8 +2,7 @@ package ru.levelup.firstname.lastname.qa.homework_number.task_number1;
 
 public class Operations {
 
-    static int calculate_factorial(double number)
-    {
+    static int calculate_factorial(double number) {
         int factorial = 1;
         for (int i = 1; i < (int) number; i++) {
             factorial = factorial * (i + 1);
@@ -11,8 +10,7 @@ public class Operations {
         return factorial;
     }
 
-    static double modular_exponentiation(double num1, double num2)
-    {
+    static double modular_exponentiation(double num1, double num2) {
         int number = (int) num1;
         int exponent = (int) num2;
         if (exponent == 0) {
