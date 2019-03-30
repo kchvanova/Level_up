@@ -1,67 +1,46 @@
 package ru.levelup.firstname.lastname.qa.homework_number.task_number1;
 
-import java.util.Scanner;
 
 public class CalculatorApplication {
 
     public static void main(String[] args) {
         CalculatorApplication app = new CalculatorApplication();
         app.startApplication();
-        double number1 = get_number();
-        String operation = get_operation();
-        double number2 = get_number();
         double result = 0;
+        double number1 = GetUserData.get_number();
+        String operation = GetUserData.get_operation();
+
+        if (operation.equals(String.valueOf('!'))) {
+            result = Operations.calculate_factorial(number1);
+
+        } else {
+            double number2 = GetUserData.get_number();
 
 
-        if (operation.equals(String.valueOf('+'))) {
-            result = number1 + number2;
-
-        }
-        if (operation.equals(String.valueOf('-'))) {
-            result = number1 - number2;
-
-        }
-        if (operation.equals(String.valueOf('*'))) {
-            result = number1 * number2;
-
-        }
-        if (operation.equals(String.valueOf('/'))) {
-            try {
-                result = number1 / number2;
+            if (operation.equals(String.valueOf('+'))) {
+                result = Operations.addition(number1, number2);
 
             }
-            catch (ArithmeticException e) {
-                System.err.println("Mathematical error");
+            if (operation.equals(String.valueOf('-'))) {
+                result = Operations.subtraction(number1, number2);
 
             }
+            if (operation.equals(String.valueOf('*'))) {
+                result = Operations.multiplication(number1, number2);
 
+            }
+            if (operation.equals(String.valueOf('/'))) {
+                result = Operations.division(number1, number2);
+
+            }
+            if (operation.equals(String.valueOf('^'))) {
+                result = Operations.modular_exponentiation(number1, number2);
+
+            }
         }
         System.out.print("Result " + result);
+
     }
-
-    private static double get_number() {
-        System.out.print("Enter number: ");
-        Scanner scan = new Scanner(System.in);
-        String input_str = scan.next();
-        double number = 0;
-
-        try {
-            number = Double.valueOf(input_str);
-
-        } catch (NumberFormatException e) {
-            System.err.println("Invalid string format");
-        }
-
-        return number;
-    }
-
-    private static String get_operation(){
-        System.out.print("Enter operation: ");
-        Scanner scan = new Scanner(System.in);
-        String operation = scan.next();
-        return operation;
-    }
-
 
     private void startApplication() {
 
