@@ -4,27 +4,18 @@ import java.util.Scanner;
 
 public class GetUserData {
 
-    static double get_number() {
+    static String getValue() {
         System.out.print("Enter number: ");
         Scanner scan = new Scanner(System.in);
-        String input_str = scan.next();
-        double number = 0;
 
-        try {
-            number = Double.valueOf(input_str);
-
-        } catch (NumberFormatException e) {
-            System.err.println("Invalid string format");
-        }
-
-        return number;
+        return  scan.next();
     }
 
-    static String get_operation(){
+    static String getOperation(){
         System.out.print("Enter operation: ");
         Scanner scan = new Scanner(System.in);
-        String operation = scan.next();
-        return operation;
+        return scan.next();
     }
+
 
 }
