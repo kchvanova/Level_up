@@ -3,8 +3,6 @@ package ru.levelup.firstname.lastname.qa.homework_number.task_number1;
 public class CalculatorApplication {
 
     public static void main(String[] args) {
-        CalculatorApplication app = new CalculatorApplication();
-        app.startApplication();
         double result = 0;
         String inputValue = GetUserData.getValue();
         int lenthValue1 = inputValue.length();
@@ -20,7 +18,8 @@ public class CalculatorApplication {
                 System.err.println("Invalid value");
             }
 
-        } else {
+        }
+        else {
             String inputValue1 = GetUserData.getValue();
 
             if (operation.equals(String.valueOf('^'))) {
