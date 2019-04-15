@@ -1,7 +1,7 @@
 package ru.levelup.firstname.lastname.qa.homework_number.task_number2;
 
 public class MiniBus extends PublicTransport {
-    boolean requestStop;
+    private boolean requestStop;
 
     public MiniBus(String typePower, int capacity, float expenditure, float count, String paymentMethod, boolean personsWithDisabilities, float tripPrice, boolean requestStop, String number) {
         super(typePower, capacity, expenditure, count, paymentMethod, personsWithDisabilities, tripPrice, number);

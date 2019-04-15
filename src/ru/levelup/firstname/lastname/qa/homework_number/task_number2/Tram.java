@@ -1,7 +1,7 @@
 package ru.levelup.firstname.lastname.qa.homework_number.task_number2;
 
 public class Tram extends PublicTransport {
-    Float pathRadius;
+    private Float pathRadius;
 
     Tram(String typePower, int capacity, float expenditure, float count, String paymentMethod, boolean personsWithDisabilities, float tripPrice, float pathRadius, String number) {
         super(typePower, capacity, expenditure, count, paymentMethod, personsWithDisabilities, tripPrice, number);

@@ -1,6 +1,6 @@
 package ru.levelup.firstname.lastname.qa.homework_number.task_number2;
 
-abstract class PublicTransport {
+abstract class PublicTransport implements Transport{
 
     PublicTransport(String typePower, int capacity, float expenditure, float count, String paymentMethod,
                     boolean personsWithDisabilities, float tripPrice, String nubmer) {
@@ -16,16 +16,56 @@ abstract class PublicTransport {
 
 
     protected String nubmer;
-    protected String typePower; // electricity, fuel, gibrid
-    protected Integer capacity; // вместимость
+    protected String typePower;
+    protected Integer capacity;
     protected Float expenditure;
     protected Float cost;
-    protected String paymentMethod; // cash, card, travelCard
+    protected String paymentMethod;
     protected Boolean personsWithDisabilities;
     protected Float tripPrice;
 
+    @Override
+    public String getNubmer() {
+        return nubmer;
+    }
 
-    public Float getCost(){
-        return this.cost;
+    @Override
+    public String getTypePower() {
+        return typePower;
+    }
+
+    @Override
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    @Override
+    public Float getExpenditure() {
+        return expenditure;
+    }
+
+    @Override
+    public Float getCost() {
+        return cost;
+    }
+
+    @Override
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    @Override
+    public Boolean getPersonsWithDisabilities() {
+        return personsWithDisabilities;
+    }
+
+    @Override
+    public Float getTripPrice() {
+        return tripPrice;
+    }
+
+    @Override
+    public boolean isConductor() {
+        return false;
     }
 }
