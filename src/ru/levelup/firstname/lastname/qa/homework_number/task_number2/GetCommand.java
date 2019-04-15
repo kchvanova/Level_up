@@ -25,7 +25,7 @@ public class GetCommand {
         catch (NumberFormatException e) {
             System.err.println("Invalid value");
         }
-        if (nameParameter.equals("paymentMethod") | nameParameter.equals("typePower") | nameParameter.equals("nubmer")
+        if (nameParameter.equals("paymentMethod") | nameParameter.equals("conductor") |nameParameter.equals("typePower") | nameParameter.equals("nubmer")
                 | nameParameter.equals("capacity") | nameParameter.equals("expenditure")  | nameParameter.equals("personsWithDisabilities")
                 | nameParameter.equals("tripPrice")) {
             String message = String.format("Поиск будет выполнен по  %s", nameParameter);
@@ -36,7 +36,6 @@ public class GetCommand {
         return nameParameter;
 
     }
-
 
     static Float getValueNumber() {
         Float value = null;
@@ -49,4 +48,19 @@ public class GetCommand {
         return value;
     }
 
+    static String getValueString() {
+        Scanner scan = new Scanner(System.in);
+        return scan.next();
+    }
+
+    static Boolean getValueBool() {
+        Boolean value = null;
+        Scanner scan = new Scanner(System.in);
+        try {
+            value = Boolean.valueOf(scan.next());
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid value");
+        }
+        return value;
+    }
 }

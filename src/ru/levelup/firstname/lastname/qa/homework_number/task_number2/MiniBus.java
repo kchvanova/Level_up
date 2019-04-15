@@ -12,9 +12,6 @@ public class MiniBus extends PublicTransport {
         return this.requestStop;
     }
 
-    public Boolean getConductor(){
-        return false;
-    }
 
     public Boolean getBattery(){
         return false;

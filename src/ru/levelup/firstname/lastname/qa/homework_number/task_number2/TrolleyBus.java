@@ -22,7 +22,4 @@ public class TrolleyBus extends PublicTransport{
         return 0f;
     }
 
-    public Boolean getConductor(){
-        return false;
-    }
 }

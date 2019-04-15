@@ -18,5 +18,5 @@ public interface Transport {
 
     Float getTripPrice() ;
 
-    boolean isConductor();
+    boolean getConductor();
 }

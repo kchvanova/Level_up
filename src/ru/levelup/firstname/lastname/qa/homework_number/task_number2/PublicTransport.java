@@ -65,7 +65,7 @@ abstract class PublicTransport implements Transport{
     }
 
     @Override
-    public boolean isConductor() {
+    public boolean getConductor() {
         return false;
     }
 }

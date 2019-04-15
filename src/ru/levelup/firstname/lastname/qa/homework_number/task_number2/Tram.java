@@ -14,10 +14,6 @@ public class Tram extends PublicTransport {
         return this.pathRadius;
     }
 
-    public Boolean getConductor(){
-        return false;
-    }
-
     public Boolean getBattery(){
         return false;
     }

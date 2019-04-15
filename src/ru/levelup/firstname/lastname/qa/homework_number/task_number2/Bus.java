@@ -11,7 +11,7 @@ public class Bus extends PublicTransport {
     }
 
     @Override
-    public boolean isConductor() {
+    public boolean getConductor() {
         return conductor;
     }
 

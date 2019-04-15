@@ -32,9 +32,9 @@ public class Operations {
     }
 
 
-    static void searchTransportByParameters(PublicTransport... transports) {
+    static void searchBusByParameters(Bus... transports) {
         HashMap mapTransport = new HashMap();
-        for (PublicTransport transport : transports){
+        for (Bus transport : transports){
             mapTransport.put(transport.getNubmer(), transport);
         }
         System.out.println("Введите количество параметров: ");
@@ -43,24 +43,51 @@ public class Operations {
             System.out.println("Введите параметр поиска: ");
             String nameParameter = GetCommand.getParamName();
             System.out.println("Введите значение: ");
-            Float value = GetCommand.getValueNumber();
             if (nameParameter.equals("expenditure")) { //5.1
-                for (PublicTransport transport : transports) {
+                Float value = GetCommand.getValueNumber();
+                for (Bus transport : transports) {
                     if (!transport.getExpenditure().equals(value)) {
                         mapTransport.remove(transport.getNubmer(), transport);
                     }
                 }
             }
             if (nameParameter.equals("capacity")) {//58
-                for (PublicTransport transport : transports) {
-                    if (!transport.getCapacity().equals(value)) {
+                Float value = GetCommand.getValueNumber();
+                for (Bus transport : transports) {
+                    if (!Float.valueOf(transport.getCapacity()).equals(value)) {
                         mapTransport.remove(transport.getNubmer(), transport);
                     }
                 }
             }
-            if (nameParameter.equals("tripPrice")) {//43.5
-                for (PublicTransport transport : transports) {
+            if (nameParameter.equals("tripPrice")) {
+                Float value = GetCommand.getValueNumber();
+                for (Bus transport : transports) {
                     if (!transport.getTripPrice().equals(value)) {
+                        mapTransport.remove(transport.getNubmer(), transport);
+                    }
+                }
+            }
+            if (nameParameter.equals("paymentMethod")) {
+                String value = GetCommand.getValueString();
+                for (Bus transport : transports) {
+                    if (!transport.getPaymentMethod().equals(value)) {
+                        mapTransport.remove(transport.getNubmer(), transport);
+                    }
+                }
+            }
+            if (nameParameter.equals("personsWithDisabilities")) {
+                Boolean value = GetCommand.getValueBool();
+                for (Bus transport : transports) {
+                    if (!transport.getPersonsWithDisabilities().equals(value)) {
+                        mapTransport.remove(transport.getNubmer(), transport);
+                    }
+                }
+            }
+            if (nameParameter.equals("conductor")) {
+                Boolean value = GetCommand.getValueBool();
+                for (Bus transport : transports) {
+                    Boolean conductor = transport.getConductor();
+                    if (!conductor.equals(value)) {
                         mapTransport.remove(transport.getNubmer(), transport);
                     }
                 }
